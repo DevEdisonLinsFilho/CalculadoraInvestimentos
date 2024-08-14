@@ -1,0 +1,46 @@
+<div class="form-container card-container">
+    <form (ngSubmit)="onSubmit()">
+        <div class="input-group">
+            <p>
+                <label for="initial-investment">Investimento Inicial (BRL)
+                    <span class="tooltip" title="O valor que você vai investir inicialmente.">?</span>
+                </label>
+                <input id="initial-investment" name="initial-investment" type="number"
+                    [(ngModel)]="initialInvestmentInput" required />
+            </p>
+            <p>
+                <label for="annual-contribution">Contribuição Anual (BRL)
+                    <span class="tooltip" title="O valor que você vai adicionar a cada ano ao investimento.">?</span>
+                </label>
+                <input id="annual-contribution" name="annual-contribution" type="number"
+                    [(ngModel)]="annualContributionInput" required />
+            </p>
+        </div>
+        <div class="input-group">
+            <p>
+                <label for="annual-return-rate">Taxa de Retorno Anual (%)
+                    <span class="tooltip" title="A taxa de retorno esperada por ano sobre o investimento.">?</span>
+                </label>
+                <input id="annual-return-rate" name="annual-return-rate" type="number"
+                    [(ngModel)]="annualReturnRateInput" required />
+            </p>
+            <p>
+                <label for="investment-duration">Duração do Investimento (Anos)
+                    <span class="tooltip" title="O número de anos durante os quais o investimento será mantido.">?</span>
+                </label>
+                <input id="investment-duration" name="investment-duration" type="number"
+                    [(ngModel)]="investmentDurationInput" required />
+            </p>
+            <p>
+                <label for="future-value">Valor Futuro (BRL)
+                    <span class="tooltip" title="O valor total esperado ao final do período de investimento.">?</span>
+                </label>
+                <input id="future-value" name="future-value" type="number" [(ngModel)]="futureValueInput" required />
+            </p>
+        </div>
+        <p>
+            <button class="submit-button" type="submit">Calcular</button>
+        </p>
+    </form>
+  </div>
+  

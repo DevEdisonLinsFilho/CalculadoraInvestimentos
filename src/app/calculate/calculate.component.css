@@ -1,0 +1,27 @@
+.result-container {
+  composes: card-container from global;
+}
+
+.results-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #388e3c; 
+  color: white;
+}
+
+.result-row.header {
+  font-weight: bold;
+  border-bottom: 2px solid #388e3c; 
+}
+
+.result-row span {
+  flex: 1;
+  text-align: center;
+}

@@ -1,0 +1,43 @@
+@if(initialInvestmentRequired > 0 || annualReturnRateRequired > 0)
+{
+<div class="result-container card-container">
+  @if (initialInvestmentRequired > 0) {
+    <div class="result-card">
+      <h3>Investimento Inicial Necessário:</h3>
+      <p>{{ initialInvestmentRequired | currency:'BRL' }}</p>
+    </div>
+  }
+  @if (annualReturnRateRequired > 0) {
+    <div class="result-card">
+      <h3>Taxa de Retorno Anual Necessária:</h3>
+      <p>{{ annualReturnRateRequired.toFixed(2) }}%</p>
+    </div>
+  }
+  @if (results.length > 0) {
+    <div class="results-container">
+      <h2>Resultados do Investimento</h2>
+      <div class="results-table">
+        <div class="result-row header">
+          <span>Ano</span>
+          <span>Juros</span>
+          <span>Valor no Final do Ano</span>
+          <span>Investimento Anual</span>
+          <span>Total de Juros</span>
+          <span>Total Investido</span>
+        </div>
+
+        @for (result of results; track $index) {
+          <div class="result-row">
+            <span>{{ result.year }}</span>
+            <span>{{ result.interest | currency:'BRL' }}</span>
+            <span>{{ result.valueEndOfYear | currency:'BRL' }}</span>
+            <span>{{ result.annualInvestment | currency:'BRL' }}</span>
+            <span>{{ result.totalInterest | currency:'BRL' }}</span>
+            <span>{{ result.totalAmountInvested | currency:'BRL' }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
+}
